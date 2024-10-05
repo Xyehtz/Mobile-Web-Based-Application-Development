@@ -1,17 +1,18 @@
 <div id="container">
   <div *ngFor="let imageFile of imageFiles" id="box">
     <img [src]="imageFile" [alt]="imageFile">
+    <p>{{ imageFile }}</p>
   </div>
 </div>
 <br>
 <div>
   <label for="sort">
-    <input type="button" value="sort" id="sort">
+    <input type="button" value="sort" id="sort" (click)="sortImages()">
   </label>
   <label for="shuffle">
-    <input type="button" value="shuffle" id="shuffle">
+    <input type="button" value="shuffle" id="shuffle" (click)="shuffleImages()">
   </label>
   <label for="reverse">
-    <input type="button" value="reverse" id="reverse">
+    <input type="button" value="reverse" id="reverse" (click)="reverseImages()">
   </label>
 </div>
