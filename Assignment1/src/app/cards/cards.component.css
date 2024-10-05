@@ -5,8 +5,26 @@
 
 #box {
   padding-right: 15px;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: appear 0.5s ease forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.10;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 label {
   padding-right: 10px;
+}
+
+div {
+  margin-bottom: 10px;
 }
