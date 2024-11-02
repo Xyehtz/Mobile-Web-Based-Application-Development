@@ -1,1 +1,28 @@
-<p>form works!</p>
+<div>
+  <form #tipForm="ngForm" (ngSubmit)="onSubmit(tipForm)">
+    <div>
+      <label for="serviceCost">Service Cost: </label>
+      <input type="number" name="serviceCost" id="serviceCost" [(ngModel)]="tipDetails.serviceCost" required>
+      <div *ngIf="!tipForm.controls['serviceCost']?.untouched && tipForm.controls['serviceCost']?.invalid">
+        Service Cost is required, please only input a number!
+      </div>
+    </div>
+
+    <div *ngFor="let quality of serviceQualityOptions | keyvalue">
+      <label for="qualityService">{{quality.key}}</label>
+      <input type="radio" name="qualityService" id="qualityService" [(ngModel)]="tipDetails.serviceQuality" [value]="quality.value">
+      <div *ngIf="!tipForm.controls['qualityService']?.untouched && tipForm.controls['qualityService']?.invalid">
+        Quality of Service is required, please select an option
+      </div>
+    </div>
+
+<!--    <div>-->
+<!--      <label for="service-cost">Service Cost: </label>-->
+<!--      <input type="text" name="service-cost" id="service-cost" ngModel required>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <div>-->
+      <button type="submit">Submit</button>
+<!--    </div>-->
+  </form>
+</div>
