@@ -8,6 +8,7 @@
       </div>
     </div>
 
+    <p>Service quality:</p>
     <div *ngFor="let quality of serviceQualityOptions | keyvalue">
       <label for="qualityService">{{quality.key}}</label>
       <input type="radio" name="qualityService" id="qualityService" [(ngModel)]="tipDetails.serviceQuality" [value]="quality.value">
@@ -16,13 +17,13 @@
       </div>
     </div>
 
-<!--    <div>-->
-<!--      <label for="service-cost">Service Cost: </label>-->
-<!--      <input type="text" name="service-cost" id="service-cost" ngModel required>-->
-<!--    </div>-->
-<!--    <br>-->
-<!--    <div>-->
-      <button type="submit">Submit</button>
-<!--    </div>-->
+    <div>
+      <label for="roundTip">
+        <input type="checkbox" name="roundTip" id="roundTip" [(ngModel)]="tipDetails.roundTip">
+        Round tip
+      </label>
+    </div>
+    <br>
+    <button type="submit">Submit</button>
   </form>
 </div>

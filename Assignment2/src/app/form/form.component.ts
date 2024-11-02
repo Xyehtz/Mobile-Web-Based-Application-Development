@@ -23,7 +23,8 @@ export class FormComponent {
 
   tipDetails = {
     serviceCost: 0,
-    serviceQuality: this.serviceQualityOptions["Okay (15%)"]
+    serviceQuality: this.serviceQualityOptions["Okay (15%)"],
+    roundTip: false
   }
 
   onSubmit(form: any): void {
