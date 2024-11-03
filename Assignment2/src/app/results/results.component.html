@@ -1,7 +1,8 @@
+<div class="card">
 <div>
   <app-header [text]="'Thanks for using The Tip Calculator'"/>
 </div>
-<div>
+<div class="container">
   <p>Service Cost: {{serviceDetails.serviceCost | currency}}<br>
     Service Quality: {{serviceDetails.serviceQualityType}}<br>
     Total Tip: {{serviceDetails.totalTip | currency}}<br>
@@ -9,6 +10,8 @@
   <p *ngIf="serviceDetails.roundTip">Round Tip: You decided to round your tip</p>
   <p *ngIf="!serviceDetails.roundTip">Round Tip: You decided not to round your tip</p>
 </div>
-<div>
+  <hr>
+<div class="container">
   <app-footer/>
+</div>
 </div>
