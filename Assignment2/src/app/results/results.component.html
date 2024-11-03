@@ -1,1 +1,14 @@
-<p>results works!</p>
+<div>
+  <app-header [text]="'Thanks for using The Tip Calculator'"/>
+</div>
+<div>
+  <p>Service Cost: {{serviceDetails.serviceCost | currency}}<br>
+    Service Quality: {{serviceDetails.serviceQualityType}}<br>
+    Total Tip: {{serviceDetails.totalTip | currency}}<br>
+    Total Service Cost: {{serviceDetails.totalServiceCost | currency}}<br></p>
+  <p *ngIf="serviceDetails.roundTip">Round Tip: You decided to round your tip</p>
+  <p *ngIf="!serviceDetails.roundTip">Round Tip: You decided not to round your tip</p>
+</div>
+<div>
+  <app-footer/>
+</div>

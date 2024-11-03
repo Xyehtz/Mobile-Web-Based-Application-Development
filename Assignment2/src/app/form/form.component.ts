@@ -20,6 +20,8 @@ import {FooterComponent} from '../footer/footer.component';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
+  text: string = 'Tip Calculator 2'
+
   constructor(private router: Router) { }
 
   serviceQualityOptions: {[key: string]: number} = {
@@ -37,7 +39,7 @@ export class FormComponent {
   onSubmit(form: any): void {
     if (form.valid) {
       console.log(this.tipDetails)
-      this.router.navigate(['tipResults', {state: {data: this.tipDetails}}])
+      this.router.navigate(['tipResults'], {queryParams: this.tipDetails})
     }
   }
 }

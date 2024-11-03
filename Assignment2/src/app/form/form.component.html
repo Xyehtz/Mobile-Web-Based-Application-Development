@@ -1,7 +1,8 @@
+<div class="card">
 <div>
-  <app-header/>
+  <app-header [text]="'Tip Calculator, please fill the information below'"/>
 </div>
-<div>
+<div class="container">
   <form #tipForm="ngForm" (ngSubmit)="onSubmit(tipForm)">
     <div>
       <label for="serviceCost">Service Cost: </label>
@@ -12,12 +13,9 @@
     </div>
 
     <p>Service quality:</p>
-    <div *ngFor="let quality of serviceQualityOptions | keyvalue">
-      <label for="qualityService">{{quality.key}}</label>
+    <div *ngFor="let quality of serviceQualityOptions | keyvalue" class="quality">
+      <label for="qualityService" id="quality">{{quality.key}}</label>
       <input type="radio" name="qualityService" id="qualityService" [(ngModel)]="tipDetails.serviceQuality" [value]="quality.value">
-      <div *ngIf="!tipForm.controls['qualityService']?.untouched && tipForm.controls['qualityService']?.invalid">
-        Quality of Service is required, please select an option
-      </div>
     </div>
 
     <div>
@@ -30,6 +28,8 @@
     <button type="submit">Submit</button>
   </form>
 </div>
-<div>
+  <hr>
+<div class="container">
   <app-footer/>
+</div>
 </div>
