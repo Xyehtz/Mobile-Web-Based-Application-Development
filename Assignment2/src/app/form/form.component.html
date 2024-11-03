@@ -1,4 +1,7 @@
 <div>
+  <app-header/>
+</div>
+<div>
   <form #tipForm="ngForm" (ngSubmit)="onSubmit(tipForm)">
     <div>
       <label for="serviceCost">Service Cost: </label>
@@ -26,4 +29,7 @@
     <br>
     <button type="submit">Submit</button>
   </form>
+</div>
+<div>
+  <app-footer/>
 </div>
